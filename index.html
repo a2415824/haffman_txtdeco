@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    <title>TXT File Compressor</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- left box for logo -->
+        <div class="left">
+            <!-- <img src="gym-g56b67f70c_1280.png" alt=""> -->
+            <div>
+                <h1 style="background-color:rgb(243, 239, 239) ;">TXT Compressor</h1>
+            </div>
+        </div>
+        <!-- mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <!-- right box for buttons -->
+        <div class="right">
+            <button class="btn">Call now</button>
+            <button class="btn">Email</button>
+        </div>
+    </header>
+    <div class="bigdiv">
+
+
+        <div class="box">
+            <h2>STEP 1: UPLOAD YOUR FILE</h2>
+            <div id="step1">
+                <form class="form" id="fileForm">
+                    <input type="file" id="uploadFile" class="input button item">
+                    <input type="submit" value="Submit" class="input button item" id="submitBtn">
+                </form>
+                <span id="text1">(.txt files only)</span>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <h2>STEP 2: SELECT&nbspACTION</h2>
+            <div id="step2">
+                <button type="button" id="encode" class="button item">COMPRESS</button>
+                <button type="button" id="decode" class="button item">DE-COMPRESS</button>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <h2>STEP 3: SIT BACK AND RELAX</h2>
+            <div id="step3">
+            </div>
+            <button type="button" onclick="location.reload()" class="button item">Click Here</button> to Start Again!
+        </div>
+
+
+
+    </div>
+    
+    <h1 style="color:rgb(47, 47, 52) ;">Huffman Coding | Greedy Algo</h1>
+<div class="algo" style="color:white ;">
+    <h3 class="container">
+        <p id="first" style="color: rgb(29, 23, 23);">Huffman coding is a lossless data compression algorithm. The idea is to assign variable-length codes to
+            input characters, lengths of the assigned codes are based on the frequencies of corresponding
+            characters. The most frequent character gets the smallest code and the least frequent character gets the
+            largest.
+            The variable-length codes assigned to input characters are Prefix Codes, means the codes (bit sequences)
+            are assigned in such a way that the code assigned to one character is not the prefix of code assigned to
+            any other character. This is how Huffman Coding makes sure that there is no ambiguity when decoding the
+            generated bitstream.<br>
+            Let us understand prefix codes with a counter example. Let there be four characters a, b, c and d, and
+            their corresponding variable length codes be 00, 01, 0 and 1. This coding leads to ambiguity because
+            code assigned to c is the prefix of codes assigned to a and b. If the compressed bit stream is 0001, the
+            de-compressed output may be “cccd” or “ccb” or “acd” or “ab”.<br>
+        </p></p>
+    </h3>
+    <h3 class="container" style="color: rgb(9, 8, 8);"> There are mainly two major parts in Huffman Coding<br>
+
+        <p id="second" style="color: rgb(11, 11, 11);">
+
+            1. Build a Huffman Tree from input characters.<br>
+            2. Traverse the Huffman Tree and assign codes to characters.<br>
+            Steps to build Huffman Tree<br>
+            1.Input is an array of unique characters along with their frequency of occurrences and output is Huffman
+            Tree.<br>
+
+            2.Create a leaf node for each unique character and build a min heap of all leaf nodes (Min Heap is used as<br>
+            a priority queue. The value of frequency field is used to compare two nodes in min heap. Initially, the<br>
+            least frequent character is at root)<br>
+            3.Extract two nodes with the minimum frequency from the min heap.<br>
+
+            4.Create a new internal node with a frequency equal to the sum of the two nodes frequencies. Make the<br>
+            first extracted node as its left child and the other extracted node as its right child. Add this node to
+            the min heap.<br>
+            5.Repeat steps#2 and #3 until the heap contains only one node. The remaining node is the root node and the
+            tree is complete.<br></p>
+    </h3>
+</div>
+    <script src="main.js"></script>
+</body>
+
+</html>
